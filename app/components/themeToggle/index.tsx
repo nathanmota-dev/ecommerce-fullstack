@@ -1,44 +1,37 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
+import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 
 export default function ThemeToggle() {
-    const [isLightTheme, setIsLightTheme] = useState(false);
+    const { theme, setTheme } = useTheme()
+    const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
-        const theme = localStorage.theme;
-        if (theme === "light" || (!theme && window.matchMedia("(prefers-color-scheme: light)").matches)) {
-            setIsLightTheme(true);
-            document.documentElement.classList.remove("dark");
-        } else {
-            setIsLightTheme(false);
-            document.documentElement.classList.add("dark");
-        }
-    }, []);
+        setMounted(true)
+    }, [])
+
+    if (!mounted) return null
 
     const toggleTheme = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const clickSound = new Audio("/sounds/click1.wav");
-        const click2Sound = new Audio("/sounds/click2.wav");
+        const clickSound = new Audio("/sounds/click1.wav")
+        const click2Sound = new Audio("/sounds/click2.wav")
 
         if (event.target.checked) {
-            document.documentElement.classList.remove("dark");
-            localStorage.theme = "light";
-            setIsLightTheme(true);
-            clickSound.play();
+            setTheme("light")
+            clickSound.play()
         } else {
-            document.documentElement.classList.add("dark");
-            localStorage.theme = "dark";
-            setIsLightTheme(false);
-            click2Sound.play();
+            setTheme("dark")
+            click2Sound.play()
         }
-    };
+    }
 
     return (
         <label className="flex cursor-pointer relative">
             <input
                 type="checkbox"
                 className="sr-only peer"
-                checked={isLightTheme}
+                checked={theme === "light"}
                 onChange={toggleTheme}
             />
             <div className="peer after:bg-[length:12px_12px] after:bg-no-repeat after:bg-center after:bg-[url('/dark-mode/moon.svg')] 
@@ -49,5 +42,5 @@ export default function ThemeToggle() {
                 after:animate-moon peer-checked:after:animate-sun">
             </div>
         </label>
-    );
+    )
 }
