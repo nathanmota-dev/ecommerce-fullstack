@@ -1,6 +1,7 @@
 import Carousel from "./components/carousel";
 import { Navbar } from "./components/navbar";
 import NoticeShipping from "./components/noticeShipping";
+import ProductCarousel from "./components/productCarousel";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <NoticeShipping />
       <Navbar />
       <Carousel />
+      <ProductCarousel />
     </div>
   );
 }
