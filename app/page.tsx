@@ -1,4 +1,5 @@
 import Carousel from "./components/carousel";
+import HighlightBanner from "./components/HighlightBanner";
 import { Navbar } from "./components/navbar";
 import NoticeShipping from "./components/noticeShipping";
 import ProductCarousel from "./components/productCarousel";
@@ -12,6 +13,7 @@ export default function Home() {
       <Carousel />
       <ProductCarousel />
       <SpecialCollections />
+      <HighlightBanner />
     </div>
   );
 }
