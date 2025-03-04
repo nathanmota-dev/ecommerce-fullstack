@@ -2,6 +2,7 @@ import Carousel from "./components/carousel";
 import { Navbar } from "./components/navbar";
 import NoticeShipping from "./components/noticeShipping";
 import ProductCarousel from "./components/productCarousel";
+import { SpecialCollections } from "./components/specialCollections";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar />
       <Carousel />
       <ProductCarousel />
+      <SpecialCollections />
     </div>
   );
 }
