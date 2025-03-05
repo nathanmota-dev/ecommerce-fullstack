@@ -59,9 +59,9 @@ export default function ProductCarousel() {
     const carouselRef = useRef<CarouselApi | null>(null)
 
     return (
-        <div className="container mx-auto py-5">
+        <div className="container mx-auto py-5 pt-10">
             <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold tracking-tight">MAIS VENDIDOS</h2>
+                <h2 className="text-xl md:text-5xl font-bold tracking-tight uppercase">Mais vendidos</h2>
                 <div className="flex items-center gap-2">
                     <a href="#" className="text-sm font-medium hover:underline">
                         Ver Todos

@@ -10,7 +10,7 @@ export function SpecialCollections() {
 
     return (
         <div className="py-5 container mx-auto pb-10">
-            <h2 className="text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans pb-4">
+            <h2 className="text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans pb-4 uppercase">
                 Coleções
             </h2>
             <Carousel items={cards} />
