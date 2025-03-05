@@ -1,4 +1,5 @@
 import Carousel from "./components/carousel";
+import Footer from "./components/footer";
 import HighlightBanner from "./components/HighlightBanner";
 import { Navbar } from "./components/navbar";
 import NewProducts from "./components/newProducts";
@@ -15,7 +16,8 @@ export default function Home() {
       <ProductCarousel />
       <SpecialCollections />
       <HighlightBanner />
-      <NewProducts />      
+      <NewProducts />
+      <Footer />
     </div>
   );
 }
